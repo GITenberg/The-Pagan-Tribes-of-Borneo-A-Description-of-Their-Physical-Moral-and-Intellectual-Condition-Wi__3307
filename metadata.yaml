@@ -1,0 +1,45 @@
+_repo: The-Pagan-Tribes-of-Borneo-A-Description-of-Their-Physical-Moral-and-Intellectual-Condition-Wi__3307
+contributor:
+  contributor:
+    agent_name: Haddon, Alfred C. (Alfred Cort)
+    aliases:
+    - Haddon, Alfred Cort
+    - Haddon, A. C. (Alfred Cort)
+    birthdate: 1855
+    deathdate: 1940
+    gutenberg_agent_id: '32226'
+    url: http://www.gutenberg.org/2009/agents/32226
+    wikipedia: http://en.wikipedia.org/wiki/Alfred_Cort_Haddon
+creator:
+  authors:
+  - agent_name: Hose, Charles
+    birthdate: 1863
+    deathdate: 1929
+    gutenberg_agent_id: '1161'
+    url: http://www.gutenberg.org/2009/agents/1161
+  - agent_name: McDougall, William
+    birthdate: 1871
+    deathdate: 1938
+    gutenberg_agent_id: '1162'
+    url: http://www.gutenberg.org/2009/agents/1162
+description: ''
+gutenberg_bookshelf:
+- Paganism
+- Anthropology
+gutenberg_issued: '2002-07-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '3307'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Material culture -- Borneo'
+- !lcsh 'Anthropometry -- Borneo'
+- !lcsh 'Ethnology -- Borneo'
+- !lcc 'GN'
+- !lcsh 'Borneo -- Social life and customs'
+title: "The Pagan Tribes of Borneo\r\nA Description of Their Physical Moral and Intellectual\
+  \ Condition, With Some Discussion of their Ethnic Relations"
+url: http://www.gutenberg.org/ebooks/3307
