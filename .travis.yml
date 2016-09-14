@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: RCJFaMcmxiiGHjDLNl0pwJGL//Pvi0vckhLGWutCbe0scBSIeCqRpGcJ6KZ2euX2kG6h01cbAL81Lhv0EE7kCGHyduxdXw34BCfF8RlpL550AOc+2LoRmFfPXUYFkzUiNy4EvAlTzoZs+KzTEZ6aH9Tp3XAQmnw+wmJ81GwgXynYaVZmVAoC0XDTuJQ15zuxvVgbSvm9Ov+thG64suvC2esYv0/SlXZ686iUX1nBCMkEs057eJCtiKKAplOSTihvitQS3gm2pKoPaAWJUeiXnx+m71JU0LJZbibTJfm1x0CtrZ14KbxqZ2OQQFv33RR68FHCVyR9L7dNJZGnCCtD9dZvWBAKhECv/ssrhbAqg8+FixV6xnmupKiq2sBSmJcwLUc1m4Y1UZiGfSnLAha4cwCTOJ+YbgKXhi2sjbcFTfaavqolGywW/OwjbE5EGQjmU+jGfPozKxoPz6cutlD07DuC6OITxdr/RXVAKMlgHgMGPFZuy1Q+1ydXiTsm+NZb5WhAxnOra1F8f8WRe1wU9FzpPtM3bocDoTJyC3cZrpg/uKFSWQoeTqSeiRLxfwxeC3cBlenStnaTGKfgwyPv11EjQrdZOyxmyuUUIjNG1dzL8ZZUsBNmEljEBIdw0j/DwQPEN2EduOzpYVjPeDCzzOhr6dyyzDOcoV6q864m924=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/The-Pagan-Tribes-of-Borneo-A-Description-of-Their-Physical-Moral-and-Intellectual-Condition-Wi__3307
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
