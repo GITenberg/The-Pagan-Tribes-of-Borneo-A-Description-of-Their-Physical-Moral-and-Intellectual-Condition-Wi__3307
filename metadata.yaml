@@ -1,5 +1,5 @@
 _repo: The-Pagan-Tribes-of-Borneo-A-Description-of-Their-Physical-Moral-and-Intellectual-Condition-Wi__3307
-_version: 0.2.0
+_version: 0.2.1
 contributor:
   contributor:
     agent_name: Haddon, Alfred C. (Alfred Cort)
@@ -46,6 +46,7 @@ subjects:
 - !lcsh 'Ethnology -- Borneo'
 - !lcc 'GN'
 - !lcsh 'Borneo -- Social life and customs'
+- GITenberg
 title: "The Pagan Tribes of Borneo\r\nA Description of Their Physical Moral and Intellectual\
   \ Condition, With Some Discussion of their Ethnic Relations"
 url: http://www.gutenberg.org/ebooks/3307
